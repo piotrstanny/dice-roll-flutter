@@ -27,8 +27,12 @@ class _DicePageState extends State<DicePage> {
 
   void rollDice() {
     setState(() {
-      leftDiceNo = Random().nextInt(6) + 1;
-      rightDiceNo = Random().nextInt(6) + 1;
+      int randomDice(int maxNo) {
+        return Random().nextInt(maxNo) + 1;
+      }
+
+      leftDiceNo = randomDice(6);
+      rightDiceNo = randomDice(6);
     });
   }
 
